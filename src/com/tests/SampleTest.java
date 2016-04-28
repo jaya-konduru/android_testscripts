@@ -23,7 +23,7 @@ public class SampleTest {
 		String APK = System.getProperty("app");
 		
 		DesiredCapabilities capabilities = new DesiredCapabilities();
-		capabilities.setCapability("appium-version", "1.0");
+		capabilities.setCapability("appiumVersion", "1.4.16");
 		capabilities.setCapability("platformName", "Android");
 		capabilities.setCapability("platformVersion", "4.4");
 		capabilities.setCapability("deviceName", "Nexus");
