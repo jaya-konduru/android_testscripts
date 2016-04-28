@@ -65,7 +65,6 @@ public class SampleTest {
 		wd.findElement(By.name("More options")).click();
 		wd.findElement(By.xpath("//android.widget.ListView[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]")).click();
 		//(JavascriptExecutor)wd.executeScript("mobile: scrollTo", new HashMap<String, String>() {{ put("element", wd.findElement(By.name("(null)")).getId()); }});
-		wd.close();
 	}
 	
 	private static Response uploadAPPs(String a_path, String platformName) throws FileNotFoundException {
