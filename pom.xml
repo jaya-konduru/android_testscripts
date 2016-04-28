@@ -16,6 +16,21 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
+			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.12.4</version>
+				<configuration>
+					<suiteXmlFiles>
+						<suiteXmlFile>testng.xml</suiteXmlFile>
+					</suiteXmlFiles>
+					<systemProperties>
+						<property>
+							<name>app</name>
+							<value>${env.APP}</value>
+						</property>
+					</systemProperties>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 	<dependencies>

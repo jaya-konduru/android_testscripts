@@ -13,19 +13,27 @@ import org.testng.annotations.Test;
 
 public class SampleTest {
 	
+	public static String username = "jkonduru";
+	public static String accesskey = "819eb1ee-41c8-43c0-967b-5c818b0953b4";
 	RemoteWebDriver wd;
 	
 	@BeforeTest
 	public void setUp() throws MalformedURLException{
+		
+		String APK = System.getProperty("app");
+		
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setCapability("appium-version", "1.0");
 		capabilities.setCapability("platformName", "Android");
 		capabilities.setCapability("platformVersion", "4.4");
 		capabilities.setCapability("deviceName", "Nexus");
-		capabilities.setCapability("app", "/Users/jkonduru/Downloads/app-release-unsigned.apk");
-//		capabilities.setCapability("appPackage", "com.bitrise_io.sample_apps_android_simple");
-//		capabilities.setCapability("appActivity", "com.aetn.watch.activities.SplashActivity");
-		wd = new RemoteWebDriver(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
+//		capabilities.setCapability("app", "/Users/jkonduru/Downloads/app-release-unsigned.apk");
+		capabilities.setCapability("app", APK);
+
+		//wd = new RemoteWebDriver(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
+		
+		wd = new RemoteWebDriver(new URL("http://" + username + ":" + accesskey + "@ondemand.saucelabs.com:80/wd/hub"), capabilities);
+		
 		wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 	}
 	
